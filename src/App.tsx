@@ -42,9 +42,11 @@ function save_progress() {
   localStorage.setItem("money", money());
 }
 
+setInterval(save_progress, 100);
+
 const [active_collectors, setActiveCollectors] = createStore<
   Active_collectors[]
->([
+>(JSON.parse(localStorage.getItem("active_collectors")!) || [
   {
     name: "collector1",
     value: 20,
@@ -70,6 +72,11 @@ const [active_collectors, setActiveCollectors] = createStore<
     has_manger: false,
   },
 ]);
+
+
+createEffect(() => {
+  localStorage.setItem("active_collectors", JSON.stringify(active_collectors));
+});
 
 
 createEffect(() => {
