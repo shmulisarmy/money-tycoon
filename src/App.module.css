@@ -1,0 +1,139 @@
+body{
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-color);
+}
+
+.App {
+  text-align: center;
+
+}
+
+.logo {
+  animation: logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.link {
+  color: #b318f0;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+#collectors {
+
+}
+
+
+.collector {
+      margin: 4px;
+      width: 300px;
+      padding: 10px;
+      background-color: var(--background-color);
+      color: var(--color);
+      transition: color .4s;
+      border: 1px solid var(--color);
+
+      > * {
+        margin: 4px;
+        align-items: center;
+      }
+
+
+
+      .collector_top_level{
+        width: 100%;
+
+        display: flex;
+        
+        img{
+          
+          width: 30%;  
+        }
+      }
+
+      .non_image{
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+
+      .upgrades{
+        position: relative;
+        width: fit-content;
+        padding: 10px;
+        border-radius: 4px;
+
+        &:hover, &[open]{
+
+          background-color: var(--primary-color);
+        }
+
+      }
+
+
+      .inner_content{
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        border: 1px solid var(--color);
+        padding: 10px;
+        background-color: var(--background-color);
+        color: var(--color);
+        z-index: 1;
+      }
+
+      button.collect{
+        border-radius: 8px;
+        padding: 8px;
+        background-color: var(--strong-background-color);
+        color: var(--money-color);
+
+        &:hover{
+          cursor: pointer;
+        }
+        &:active{
+          transform: scale(0.9);
+          background-color: var(--money-color);
+          color: var(--strong-background-color);
+        }
+      }
+}
+
+
+#money {
+  color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+
+  
+}
+
+
+progress {
+  border: none;
+  border-radius: 10px;
+  color: var(--primary-color);
+  height: 16px;
+  width: 100%;
+}
